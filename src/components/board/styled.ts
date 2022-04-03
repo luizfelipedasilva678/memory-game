@@ -4,6 +4,8 @@ const BoardContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 `;
 
 export default BoardContainer;

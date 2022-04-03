@@ -1,5 +1,7 @@
+import { IEmoji } from './Emojis';
 export interface ICard {
-  emoji: string;
-  setVisibleEmoji: React.Dispatch<React.SetStateAction<string[]>>;
-  emojisState: string[];
+  emoji: IEmoji;
+  setVisibleEmoji: React.Dispatch<React.SetStateAction<IEmoji[]>>;
+  emojisState: IEmoji[];
+  foundPairs: IEmoji[];
 }
