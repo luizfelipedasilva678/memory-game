@@ -1,4 +1,4 @@
-import styled, { StyledComponent } from 'styled-components';
+import styled from 'styled-components';
 import { black, bgColor } from '../../styles/colors';
 
 const Main = styled.main`
