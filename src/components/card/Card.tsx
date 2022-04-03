@@ -8,8 +8,6 @@ const Card = (props: ICard) => {
   const [wasFound, setWasFound] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('TEste', emojisState);
-
     if (foundPairs.includes(emoji)) {
       return;
     }
