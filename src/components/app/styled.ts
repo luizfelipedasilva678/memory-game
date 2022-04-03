@@ -1,7 +1,7 @@
 import styled, { StyledComponent } from 'styled-components';
 import { black, bgColor } from '../../styles/colors';
 
-const Main: StyledComponent<'main', any | never> = styled.main`
+const Main = styled.main`
   padding: 20px;
   display: flex;
   font-size: 3em;
