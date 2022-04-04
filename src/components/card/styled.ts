@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
   cursor: pointer;
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   &.rotateCard180 {
     transform: rotateY(180deg);
