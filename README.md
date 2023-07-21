@@ -1,6 +1,10 @@
-# Next.js 13 template for new projects
+# Memory game
 
-## This template includes
+## Memory game with Next.js 13
+
+## Status: under construction 🚧
+
+## Techlogies
 
 - ### [Jest](https://jestjs.io/pt-BR/)
 
