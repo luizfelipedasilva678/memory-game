@@ -4,7 +4,7 @@
 
 ## Status: under construction 🚧
 
-## Techlogies
+## Technologies
 
 - ### [Jest](https://jestjs.io/pt-BR/)
 
