@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import Header from './Header';
 
-describe('Counter', () => {
+describe('Header', () => {
   it('should render correctly', () => {
     const sut = render(<Header />);
 
