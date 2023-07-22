@@ -1,13 +1,14 @@
+import { useGameDispatch } from '@/src/hooks/useGameDispatch';
 import { PERSPECTIVE } from '@/src/constants';
 import { Box } from '@mui/material';
 
 interface Props {
-  onClick: (card: Card) => void;
   cardInfo: Card;
 }
 
-const Card = ({ onClick: handleClick, cardInfo }: Props) => {
-  const { flip, image } = cardInfo;
+const Card = ({ cardInfo }: Props) => {
+  const dispatch = useGameDispatch();
+  const { flip, image, id } = cardInfo;
 
   return (
     <Box
@@ -39,7 +40,12 @@ const Card = ({ onClick: handleClick, cardInfo }: Props) => {
             backfaceVisibility: 'hidden',
           }}
           onClick={() => {
-            handleClick(cardInfo);
+            dispatch({
+              type: 'FLIP_CARD',
+              payload: {
+                cardId: id,
+              },
+            });
           }}
         >
           ?

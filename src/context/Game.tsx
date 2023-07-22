@@ -46,15 +46,30 @@ function gameReducer(
         cards: newCards,
       };
     }
+    case 'FOUNDED_PAIR': {
+      const newCards = currentState.cards.map((card) =>
+        card.id === action.payload.card1Id || card.id === action.payload.card2Id
+          ? { ...card, founded: true }
+          : card
+      );
+
+      return {
+        ...currentState,
+        cards: newCards,
+        pairsFounded: currentState.pairsFounded + 1,
+        round: currentState.round + 1,
+      };
+    }
     case 'UNFLIP_CARDS': {
       const newCards = currentState.cards.map((card) => ({
         ...card,
-        flip: false,
+        ...(card.founded ? { flip: true } : { flip: false }),
       }));
 
       return {
         ...currentState,
         cards: newCards,
+        round: currentState.round + 1,
       };
     }
     case 'SHUFFLE_CARDS': {
