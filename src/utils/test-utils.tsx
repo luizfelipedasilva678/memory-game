@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import { type ReactElement } from 'react';
+import { dispatch } from '@/src/mocks';
 import {
   GameContext,
   GameDispatchContext,
@@ -8,13 +9,13 @@ import {
 
 const AllTheProviders = ({
   children,
-  dispatch,
+  customInitialValue,
 }: {
   children: React.ReactNode;
-  dispatch: jest.Mock<any, any, any>;
+  customInitialValue: GameState | undefined;
 }) => {
   return (
-    <GameContext.Provider value={initialValue}>
+    <GameContext.Provider value={customInitialValue ?? initialValue}>
       <GameDispatchContext.Provider value={dispatch}>
         {children}
       </GameDispatchContext.Provider>
@@ -22,7 +23,14 @@ const AllTheProviders = ({
   );
 };
 
-const customRender = (ui: ReactElement, dispatch: jest.Mock<any, any, any>) =>
-  render(<AllTheProviders dispatch={dispatch}> {ui} </AllTheProviders>);
+const customRender = (
+  ui: ReactElement,
+  customInitialValue: GameState | undefined = undefined
+) =>
+  render(
+    <AllTheProviders customInitialValue={customInitialValue}>
+      {ui}
+    </AllTheProviders>
+  );
 
 export { customRender };

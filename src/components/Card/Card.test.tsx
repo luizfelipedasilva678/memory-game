@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import Card from './Card';
-import { cardInfo } from '@/src/mocks';
+import { cardInfo, dispatch } from '@/src/mocks';
 import { customRender } from '../../utils/test-utils';
 
 describe('Card', () => {
@@ -27,9 +27,7 @@ describe('Card', () => {
   });
 
   it('should flip card', async () => {
-    const dispatch = jest.fn();
-
-    const sut = customRender(<Card cardInfo={cardInfo} />, dispatch);
+    const sut = customRender(<Card cardInfo={cardInfo} />);
 
     const backcard = sut.getByTestId('backcard');
 

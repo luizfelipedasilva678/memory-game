@@ -11,9 +11,9 @@ const BoardHeader = () => {
     <Box component={'header'} className="flex justify-between mb-3">
       <Box>
         <Typography className="text-2xl">
-          Pairs Founded:{pairsFounded}
+          Pairs Founded: {pairsFounded}
         </Typography>
-        <Typography className="text-2xl">Round :{round}</Typography>
+        <Typography className="text-2xl">Round: {round}</Typography>
       </Box>
       {pairsFounded === GAME_IS_OVER ? (
         <Button

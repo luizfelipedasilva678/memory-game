@@ -5,5 +5,4 @@ export const cardInfo = {
   founded: false,
 };
 
-export const dispatch = () => 'dispatched';
-export const useGameDispatch = () => dispatch;
+export const dispatch = jest.fn();
