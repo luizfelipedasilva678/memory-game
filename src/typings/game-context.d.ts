@@ -8,7 +8,16 @@ interface GameProviderProps {
   children: React.ReactNode;
 }
 
-type GameContextActions = FlipCard | UnflipCards | ShuffleCards | FoundedPair;
+type GameContextActions =
+  | FlipCard
+  | UnflipCards
+  | ShuffleCards
+  | PlayAgain
+  | FoundedPair;
+
+interface PlayAgain {
+  type: 'PLAY_AGAIN';
+}
 
 interface FoundedPair {
   type: 'FOUNDED_PAIR';

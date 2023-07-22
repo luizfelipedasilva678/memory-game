@@ -13,6 +13,13 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'primary.main': '#035E7B',
+      },
+    },
+    screens: {
+      sm: { max: '720px' },
+      xsm: { max: '560px' },
     },
   },
   plugins: [],

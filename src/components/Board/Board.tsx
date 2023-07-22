@@ -7,6 +7,7 @@ import { useGameState } from '@/src/hooks/useGameState';
 import { useGameDispatch } from '@/src/hooks/useGameDispatch';
 import { UNFLIP_DELAY } from '@/src/constants';
 import Card from '../Card';
+import BoardHeader from '../BoardHeader';
 
 const Board = () => {
   const { cards } = useGameState();
@@ -35,10 +36,13 @@ const Board = () => {
   }, [cardsFlipped]);
 
   return (
-    <Box component={'div'} className="grid grid-cols-3 gap-2">
-      {cards.map((card) => (
-        <Card key={card.id} cardInfo={card} />
-      ))}
+    <Box>
+      <BoardHeader />
+      <Box component={'div'} className="grid grid-cols-3 gap-2">
+        {cards.map((card) => (
+          <Card key={card.id} cardInfo={card} />
+        ))}
+      </Box>
     </Box>
   );
 };

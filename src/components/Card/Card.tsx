@@ -1,6 +1,7 @@
 import { useGameDispatch } from '@/src/hooks/useGameDispatch';
 import { PERSPECTIVE } from '@/src/constants';
 import { Box } from '@mui/material';
+import { useGameState } from '@/src/hooks/useGameState';
 
 interface Props {
   cardInfo: Card;
@@ -8,19 +9,23 @@ interface Props {
 
 const Card = ({ cardInfo }: Props) => {
   const dispatch = useGameDispatch();
+  const { cards } = useGameState();
   const { flip, image, id } = cardInfo;
+  const cardsFlipped = cards.filter((card) => card.flip && !card.founded);
 
   return (
     <Box
       component={'div'}
-      className="w-40 h-40 bg-transparent"
+      className={`w-40 h-40 sm:w-28 sm:h-28 bg-transparent ${
+        cardsFlipped.length === 2 ? 'pointer-events-none' : ''
+      }`}
       sx={{
         perspective: PERSPECTIVE,
       }}
     >
       <Box
         component={'div'}
-        className="cursor-pointer relative w-full h-full text-center flex items-center"
+        className="cursor-pointer relative w-full h-full text-center flex items-center rounded-lg"
         sx={{
           transformStyle: 'preserve-3d',
           transition: 'transform 0.6s',
@@ -34,7 +39,7 @@ const Card = ({ cardInfo }: Props) => {
       >
         <Box
           component={'div'}
-          className="text-9xl text-center text-white w-full h-full rounded-lg absolute flex-col flex justify-around"
+          className="text-5xl text-center text-white w-full h-full rounded-lg absolute flex-col flex justify-around"
           sx={{
             bgcolor: 'primary.main',
             backfaceVisibility: 'hidden',
@@ -52,7 +57,7 @@ const Card = ({ cardInfo }: Props) => {
         </Box>
         <Box
           component={'div'}
-          className="text-9xl w-full h-full absolute rounded-lg flex-col flex justify-around"
+          className="text-5xl w-full h-full absolute rounded-lg flex-col flex justify-around"
           sx={{
             bgcolor: 'primary.main',
             backfaceVisibility: 'hidden',

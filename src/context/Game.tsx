@@ -36,6 +36,14 @@ function gameReducer(
   action: GameContextActions
 ): GameState {
   switch (action.type) {
+    case 'PLAY_AGAIN': {
+      return {
+        ...currentState,
+        pairsFounded: 0,
+        round: 0,
+        cards: shuffle(initialValue.cards),
+      };
+    }
     case 'FLIP_CARD': {
       const newCards = currentState.cards.map((card) =>
         card.id === action.payload.cardId ? { ...card, flip: true } : card

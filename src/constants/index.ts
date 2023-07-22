@@ -48,3 +48,4 @@ export const CARDS: Card[] = [
 ];
 
 export const UNFLIP_DELAY = 1500;
+export const GAME_IS_OVER = 6;
