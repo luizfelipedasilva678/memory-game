@@ -2,7 +2,7 @@
 
 ## Memory game with Next.js 13
 
-## Status: under construction 🚧
+## You can see the final result here: https://luizfelipedasilva678.github.io/memory-game/
 
 ## Technologies
 
