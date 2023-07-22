@@ -1,13 +1,12 @@
-'use client';
-
+import { PERSPECTIVE } from '@/src/constants';
 import { Box } from '@mui/material';
 
 interface Props {
-  onClick: () => void;
-  cardInfo: CardInfo;
+  onClick: (card: Card) => void;
+  cardInfo: Card;
 }
 
-const Card = ({ onClick, cardInfo }: Props) => {
+const Card = ({ onClick: handleClick, cardInfo }: Props) => {
   const { flip, image } = cardInfo;
 
   return (
@@ -15,12 +14,12 @@ const Card = ({ onClick, cardInfo }: Props) => {
       component={'div'}
       className="w-40 h-40 bg-transparent"
       sx={{
-        perspective: 1000,
+        perspective: PERSPECTIVE,
       }}
     >
       <Box
         component={'div'}
-        className="relative w-full h-full text-center flex items-center"
+        className="cursor-pointer relative w-full h-full text-center flex items-center"
         sx={{
           transformStyle: 'preserve-3d',
           transition: 'transform 0.6s',
@@ -39,7 +38,9 @@ const Card = ({ onClick, cardInfo }: Props) => {
             bgcolor: 'primary.main',
             backfaceVisibility: 'hidden',
           }}
-          onClick={onClick}
+          onClick={() => {
+            handleClick(cardInfo);
+          }}
         >
           ?
         </Box>
