@@ -15,6 +15,7 @@ const Card = ({ cardInfo }: Props) => {
 
   return (
     <Box
+      data-testid="card-container"
       component={'div'}
       className={`w-40 h-40 sm:w-28 sm:h-28 bg-transparent ${
         cardsFlipped.length === 2 ? 'pointer-events-none' : ''
