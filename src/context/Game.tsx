@@ -2,7 +2,7 @@ import { createContext, useReducer, type Dispatch, useEffect } from 'react';
 import { shuffle } from '../utils/shuffle';
 import { CARDS } from '../constants';
 
-const initialValue = {
+export const initialValue = {
   cards: CARDS,
   round: 0,
   pairsFounded: 0,

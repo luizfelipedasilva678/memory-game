@@ -26,6 +26,7 @@ const Card = ({ cardInfo }: Props) => {
       <Box
         component={'div'}
         className="cursor-pointer relative w-full h-full text-center flex items-center rounded-lg"
+        data-testid="frontcard"
         sx={{
           transformStyle: 'preserve-3d',
           transition: 'transform 0.6s',
@@ -40,6 +41,7 @@ const Card = ({ cardInfo }: Props) => {
         <Box
           component={'div'}
           className="text-5xl text-center text-white w-full h-full rounded-lg absolute flex-col flex justify-around"
+          data-testid="backcard"
           sx={{
             bgcolor: 'primary.main',
             backfaceVisibility: 'hidden',
@@ -58,6 +60,7 @@ const Card = ({ cardInfo }: Props) => {
         <Box
           component={'div'}
           className="text-5xl w-full h-full absolute rounded-lg flex-col flex justify-around"
+          data-testid="imagecard"
           sx={{
             bgcolor: 'primary.main',
             backfaceVisibility: 'hidden',
