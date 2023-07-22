@@ -8,8 +8,8 @@ import Footer from '../components/Footer/Footer';
 const oswald = Oswald({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Template Next.js',
-  description: 'Template for Next.js 13 for new projects',
+  title: 'Memory game',
+  description: 'Memory game made with Next.js 13',
 };
 
 export default function RootLayout({
